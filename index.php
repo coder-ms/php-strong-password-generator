@@ -1,4 +1,5 @@
 <?php
+include __DIR__ . '/partials/header.php';
 
 if (isset($POST['email'])) {
     $result = false;
@@ -30,42 +31,48 @@ Invece di visualizzare la password nella index, effettuare un redirect ad una pa
 Milestone 4 (BONUS)
 Gestire ulteriori parametri per la password: quali caratteri usare fra numeri, lettere e simboli. Possono essere scelti singolarmente (es. solo numeri) oppure possono essere combinati fra loro (es. numeri e simboli, oppure tutti e tre insieme).
 Dare all’utente anche la possibilità di permettere o meno la ripetizione di caratteri uguali.  
+            <label for="email" class="form-label">Iscriviti alla newsletter</label>
+            <input type="text" id="email" name="email" class="form-control"
+                
+                class="<?php //isset($result) && !$result ? $errorClass : ''; ?>">
 -->
 
 
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <title>Password Generator</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="css/style.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-</head>
-
-<body>
-    <div class="container">
-        <?php
-
-        if (isset($result)) {
-        ?>
-        <div class="alert alert-success">
-            Iscrizione alla newsletter con successo! <br>
-            Riceverai aggiornamenti sulla sta email!
-        </div>
-        <?php
-        } else {
-        ?>
-        <div class="alert alert-danger">
-            Errore durante la procedura d'iscrizione alla newsletter. <br>
-            Formato email non corretto!
-        </div>
-        <?php
-        }
-        ?>
+<div class="container">
+    <?php
+    if (isset($result)) {
+        if ($result) {
+    ?>
+    <div class="alert alert-success">
+        Iscrizione alla newsletter con successo! <br>
+        Riceverai aggiornamenti sulla sta email!
     </div>
+    <?php
+        } else {
+    ?>
+    <div class="alert alert-danger">
+        Errore durante la procedura d'iscrizione alla newsletter. <br>
+        Formato email non corretto!
+    </div>
+    <?php
+        }
+    }
+    ?>
+
+    <form action="index.php" method="GET" name="emailform">
+        <div class="mb-3">
+            <label for="email" class="form-label">Iscriviti alla newsletter</label>
+            <input type="text" id="email" name="email" class="form-control" value="<?php!empty($email) ? $email : ''; ?>">
+        </div>
+        <button type="submit" class="btn btn-primary">Invia</button>
+        <button type="reset" class="btn btn-secondary">Annulla</button>
+    </form>
+</div>
+<?php
+include __DIR__ . '/partials/footer.php';
+
+?>
 </body>
 
 </html>

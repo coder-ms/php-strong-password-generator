@@ -40,7 +40,7 @@ if (isset($_GET['pswlen']) && !empty($_GET['pswlen'])) {
 ?>
     <main>
         <div class="container">
-            <h1>Passwoed Generator</h1>
+            <h1>Password Generator</h1>
             <form action="index.php" method="GET">
 
                 <input type="number" id="pswlen" name="pswlen" placeholder="Numero di caratteri">
@@ -48,7 +48,7 @@ if (isset($_GET['pswlen']) && !empty($_GET['pswlen'])) {
             </form>
         </div>
     </main>
-    
+
     <footer>
     <?php include __DIR__ . '/partials/footer.php'; ?>
     </footer>

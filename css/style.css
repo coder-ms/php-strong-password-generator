@@ -3,6 +3,17 @@
     padding: 0;
     box-sizing: border-box;
   }
+
+  body{
+    height: 100vh;
+  }
+
+  header{
+    margin-bottom: 50px;
+    height: 80px;
+    background-color: grey;
+  }
+
   .container{
     display: flex;
     justify-content: center;
@@ -13,7 +24,7 @@ p, span{
     color: black;
 }
 
-.buttonToIndex{
+.buttonToIndex, .buttonGenerator{
     height: 40px;
     font-size: 1rem;
     width: 250px;
@@ -28,7 +39,13 @@ p, span{
 }
 
 
-.buttonToIndex:hover{
+.buttonToIndex:hover, .buttonGenerator:hover{
     color: rgb(57, 118, 189);
     background-color: white;
 }
+
+
+  footer{
+    margin-top: 50px;
+  }
+

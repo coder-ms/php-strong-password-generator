@@ -18,3 +18,5 @@ function passwordGenerator(){
         header("location: ./pswShow.php");
     }
 }
+
+?>

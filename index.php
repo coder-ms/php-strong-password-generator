@@ -27,6 +27,7 @@ Dare all’utente anche la possibilità di permettere o meno la ripetizione di c
  
 
 <?php
+include __DIR__ . '/partials/header.php';
 
 session_start();
 include __DIR__ . '/functions/functions.php';
@@ -37,28 +38,20 @@ if (isset($_GET['pswlen']) && !empty($_GET['pswlen'])) {
 };
 
 ?>
-<!DOCTYPE html>
-<html lang="en">
+    <main>
+        <div class="container">
+            <h1>Passwoed Generator</h1>
+            <form action="index.php" method="GET">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <title>PASSWORD GENERATOR</title>
-</head>
-
-<body>
-    <div class="container">
-        <h1>Crea la tua password sicura</h1>
-        <form action="index.php" method="GET">
-
-            <input type="number" id="pswlen" name="pswlen" placeholder="Numero di caratteri">
-            <button type="submit">Genera la tua password</button>
-        </form>
-    </div>
+                <input type="number" id="pswlen" name="pswlen" placeholder="Numero di caratteri">
+                <button type="submit">Genera la tua password</button>
+            </form>
+        </div>
+    </main>
+    
+    <footer>
+    <?php include __DIR__ . '/partials/footer.php'; ?>
+    </footer>
 </body>
 
 </html>
